@@ -1,22 +1,17 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-
-const Home = lazy(() => import('../pages/Home'));
-const DialogDemo = lazy(() => import('../pages/DialogDemo'));
-const AnimationPage = lazy(() => import('../pages/AnimationPage'));
-const RouteAnimationPage = lazy(() => import('../pages/RouteAnimationPage'));
+import Home from '../pages/Home';
+import DialogPage from '../pages/DialogPage';
+import RouteAnimationPage from '../pages/RouteAnimationPage';
 
 const AppRoutes: React.FC = () => {
   return (
     <Router>
-      <Suspense fallback={<div>加载中...</div>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dialog" element={<DialogDemo />} />
-          <Route path="/animation" element={<AnimationPage />} />
-          <Route path="/route-animation" element={<RouteAnimationPage />} />
-        </Routes>
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dialog" element={<DialogPage />} />
+        <Route path="/animation" element={<RouteAnimationPage />} />
+      </Routes>
     </Router>
   );
 };
