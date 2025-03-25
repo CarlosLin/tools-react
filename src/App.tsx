@@ -1,7 +1,9 @@
-import React from 'react'
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import DialogPage from './pages/DialogPage'
-import './App.css'
+import React from "react";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import DialogPage from "./pages/DialogPage";
+import AnimationPage from "./pages/RouteAnimationPage";
+import "./App.css";
+import { AnimatedRoute } from "./components/Animation/AnimatedRoute";
 
 const HomePage: React.FC = () => {
   return (
@@ -11,11 +13,13 @@ const HomePage: React.FC = () => {
         <Link to="/dialog" className="btn">
           對話功能
         </Link>
-        {/* 未來可以添加更多功能按鈕 */}
+        <Link to="/animation" className="btn">
+          動畫功能
+        </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const App: React.FC = () => {
   return (
@@ -23,9 +27,17 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dialog" element={<DialogPage />} />
+        <Route
+          path="/animation"
+          element={
+            <AnimatedRoute type="fade" duration={1000}>
+              <AnimationPage />
+            </AnimatedRoute>
+          }
+        />
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;
