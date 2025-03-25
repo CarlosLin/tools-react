@@ -50,7 +50,7 @@ const RouteAnimationPage: React.FC = () => {
 
   return (
     <div className="route-animation-page">
-      <h1>路由动画演示</h1>
+      <h1>路由動畫示範</h1>
 
       <div className="animation-demo">
         <RouteAnimationController
@@ -60,22 +60,22 @@ const RouteAnimationPage: React.FC = () => {
           direction={direction}
         >
           <div className="route-content">
-            <h2>路由内容</h2>
-            <p>这里是页面内容，将会随着路由变化而产生动画效果。</p>
+            <h2>路由內容</h2>
+            <p>這裡是頁面內容，將會隨著路由變化而產生動畫效果。</p>
           </div>
         </RouteAnimationController>
 
         <div className="animation-controls">
           <button onClick={toggleAnimation}>
-            {isActive ? "隐藏内容" : "显示内容"}
+            {isActive ? "隱藏內容" : "顯示內容"}
           </button>
           <button onClick={changeAnimationType}>
-            动画类型: {animationType}
+            動畫類型: {animationType}
           </button>
           {(animationType === "slide" || animationType === "zoom") && (
             <button onClick={changeDirection}>方向: {direction}</button>
           )}
-          <button onClick={changeDuration}>持续时间: {duration}ms</button>
+          <button onClick={changeDuration}>持續時間: {duration}ms</button>
         </div>
       </div>
 
